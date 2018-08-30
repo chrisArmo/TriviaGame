@@ -11,11 +11,12 @@
 .container {
     color: rgb(187, 22, 22);
     font-family: 'Almendra', serif;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
 
 /* Jumbotron */
 .jumbotron {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 767px) {
@@ -26,4 +27,35 @@
 
 .jumbotron button {
     padding: 0.5em 2em;
+}
+
+/* Timer */
+.timer {
+    display: none;
+    width: 100px;
+    padding: 0.6em 1.2em;
+    border: 1px solid #fff;
+    border-radius: 0.3em;
+    margin: 0 auto;
+    background: #000;
+}
+
+/* Question */
+.question {
+    color: #d3d3d3;
+}
+
+/* Answer */
+.answer {
+    border: 1px solid rgb(187, 22, 22);
+    background: #000;
+    color: #8c8c8c;
+    font-size: 1.2em;
+    transition: background 0.3s ease-out, color 0.3s ease-out;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background: #343a40;
+    color: #fff;
 }
