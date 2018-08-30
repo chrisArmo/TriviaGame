@@ -1,0 +1,29 @@
+/* Wrapper */
+.wrapper {
+    min-width: 100%;
+    min-height: 100vh;
+    padding: 1px;
+    background: url("../images/skull-cross-bones-pattern.gif") no-repeat center;
+    background-size: cover;
+}
+
+/* Container */
+.container {
+    color: rgb(187, 22, 22);
+    font-family: 'Almendra', serif;
+}
+
+/* Jumbotron */
+.jumbotron {
+    margin-top: 40px;
+}
+
+@media screen and (min-width: 767px) {
+    .jumbotron {
+        margin-top: 60px;
+    }
+}
+
+.jumbotron button {
+    padding: 0.5em 2em;
+}
