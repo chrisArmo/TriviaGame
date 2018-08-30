@@ -62,15 +62,68 @@ const quiz = [{
         "Creeping Death",
         "Welcome Home (Sanitarium)"
     ]
-}];
+}],
+game = {
+    correctAnswers: 0,
+    incorrectAnswers: 0,
+    unansweredQuestions: 0,
+    questionTime: 30,
+    intervalId: null,
+    over: false,
+    currentAnswer: null
+};
 
 // DOM SELECTIONS
 // -------------------------------------------------->
-
+const startButton = $(".start"),
+timer = $(".timer");
 
 // FUNCTIONS
 // -------------------------------------------------->
+// Get random array index -->
+function getRandomInd(arr) {
+    return Math.floor(Math.random() * arr.length);
+}
 
+// Randomize array order & return new array -->
+function randomizeArr(arr) {
+    const clone = arr.slice(0);
+    let randomized = [];
+    while (clone.length !== 0) {
+        const randInd = getRandomInd(clone);
+        randomized = randomized.concat(clone.splice(randInd, 1));
+    }
+    return randomized;
+}
+
+// Create & display question & answers -->
+function createAndDisplay(question) {
+    const $questionH3 = $(`<h3 class="mb-4 question">${question.question}</h3>`),
+    $answersGroup = $("<ul class='list-group'></ul>"),
+    randomIndex = getRandomInd(question.incorrect);
+    answers = randomizeArr(question.incorrect);
+    answers.splice(randomIndex, 0, question.answer);
+    answers.forEach(answer => {
+        $answersGroup.append(`<li class="list-group-item answer">${answer}</li>`);
+    });
+    $(".game").append($questionH3, $answersGroup);
+}
+
+// Start & update timer -->
+function startAndUpdateTimer(game) {
+    game.intervalId = setInterval(function() {
+        if (game.questionTime > 0) {
+            game.questionTime -= 1;
+            timer.text(game.questionTime);
+        }
+    }, 1000);
+}
 
 // PROCESS
 // -------------------------------------------------->
+$(".start").on("click", function(e) {
+    $(this).hide();
+    timer.show();
+    createAndDisplay(quiz[1]);
+    startAndUpdateTimer(game);
+});
