@@ -9,7 +9,7 @@
 
 /* Container */
 .container {
-    color: #dc3545;
+    color: #d3d3d3;
     font-family: 'Almendra', serif;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
@@ -30,12 +30,17 @@
     padding: 0.5em 2em;
 }
 
+/* Display 3 */
+.display-3 {
+    color: #ff7741;
+}
+
 /* Timer */
 .timer {
     display: none;
     width: 100px;
     padding: 0.6em 1.2em;
-    border: 1px solid #fff;
+    border: 2px solid #dc3545;
     border-radius: 0.3em;
     margin: 0 auto;
     background: #000;
@@ -50,7 +55,7 @@
 .answer {
     border: 1px solid rgb(187, 22, 22);
     background: #000;
-    color: #8c8c8c;
+    color: #b4b4b4;
     font-size: 1.2em;
     transition: background 0.3s ease-out, color 0.3s ease-out;
     cursor: pointer;
@@ -65,4 +70,10 @@
 .answer-image {
     max-width: 300px;
     max-height: 250px;
+    border: 2px solid #fff;
+}
+
+/* Game results */
+.game span {
+    color: #dc3545;
 }
