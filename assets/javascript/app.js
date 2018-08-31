@@ -118,9 +118,9 @@ function checkGameEnd() {
 function showGameEndResults() {
     gameDisplay.empty();
     gameDisplay.html(`
-        <h3>Correct Answers: ${game.correctAnswers}</h3>
-        <h3>Incorrect Answers: ${game.incorrectAnswers}</h3>
-        <h3>Unanswered: ${game.unansweredQuestions}</h3>
+        <h3>Correct Answers: <span>${game.correctAnswers}</span></h3>
+        <h3>Incorrect Answers: <span>${game.incorrectAnswers}</span></h3>
+        <h3>Unanswered: <span>${game.unansweredQuestions}</span></h3>
         <button class="btn btn-lg btn-danger mt-3 play-again" type="button">Play Again</button>
     `);
 }
