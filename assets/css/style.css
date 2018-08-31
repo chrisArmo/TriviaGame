@@ -3,13 +3,13 @@
     min-width: 100%;
     min-height: 100vh;
     padding: 1px;
-    background: url("../images/skull-cross-bones-pattern.gif") no-repeat center;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../images/color-skull.png") no-repeat center;
     background-size: cover;
 }
 
 /* Container */
 .container {
-    color: rgb(187, 22, 22);
+    color: #dc3545;
     font-family: 'Almendra', serif;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
 }
@@ -17,11 +17,12 @@
 /* Jumbotron */
 .jumbotron {
     margin-top: 20px;
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 @media screen and (min-width: 767px) {
     .jumbotron {
-        margin-top: 60px;
+        margin-top: 40px;
     }
 }
 
@@ -58,4 +59,10 @@
 .answer:hover {
     background: #343a40;
     color: #fff;
+}
+
+/* Answer image */
+.answer-image {
+    max-width: 300px;
+    max-height: 250px;
 }
